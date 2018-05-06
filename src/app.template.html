@@ -1,0 +1,52 @@
+<div layout="row" flex md-theme="{{ $ctrl.selectedTheme }}" md-theme-watch style="width:100%;height: 100%;overflow: hidden;">
+
+    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+        <md-toolbar class="md-accent">
+            <div class="md-toolbar-tools">User's Profile</div>
+        </md-toolbar>
+        <md-content flex role="navigation">
+            <md-list>
+                <md-list-item md-ink-ripple class="md-clickable">Item 1</md-list-item>
+                <md-list-item md-ink-ripple class="md-clickable">Item 2</md-list-item>
+                <md-list-item md-ink-ripple class="md-clickable">Item 3</md-list-item>
+            </md-list>
+        </md-content>
+    </md-sidenav>
+    <div layout="column" layout-fill>
+        <md-toolbar class="md-shadow-bottom-z-1">
+            <div class="md-toolbar-tools" layout="row" layout-align="space-between center">
+                <div layout="row" layout-align="center center">
+                    <md-button ng-click="$ctrl.toggleSidenav('left')" hide-gt-md1 aria-label="Menu">
+                        <md-icon md-svg-src="action:ic_reorder_24px"></md-icon>
+                    </md-button>
+                    <img src="/design/images/logo.png" width="40" />
+                    <h1>Traffic Path</h1>
+                </div>
+                <div>
+                    <md-button class="md-icon-button" ng-click="$ctrl.goToAboutView();" aria-label="About">
+                        <md-tooltip>About</md-tooltip>
+                        <md-icon md-svg-src="social:ic_school_24px"></md-icon>
+                    </md-button>
+
+                    <md-menu>
+                        <md-button class="md-icon-button" ng-click="$ctrl.goToAboutView();" aria-label="theme" ng-mouseenter="$mdMenu.open()">
+                            <md-icon md-svg-src="action:ic_invert_colors_24px"></md-icon>
+                        </md-button>
+
+                        <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+                            <md-menu-item ng-repeat="item in ['LIGHT','DARK']">
+                                <md-button ng-click="$ctrl.changeTheme(item);">
+                                    {{item}}
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+
+                </div>
+            </div>
+        </md-toolbar>
+
+        <div ui-view style="height: 100%;" layout="column"></div>
+
+    </div>
+</div>

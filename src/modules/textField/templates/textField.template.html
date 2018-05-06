@@ -1,0 +1,14 @@
+<div layout="row" flex layout-align="start center">
+    <div flex="95" layout-fill>
+        <md-input-container class="md-icon-float md-block">
+            <label>Choose {{ $ctrl.title }} location</label>
+            <md-icon md-svg-src="{{$ctrl.icon}}" class="name"></md-icon>
+            <input ng-model="$ctrl.text" type="text" ng-change="$ctrl.onTextChange($ctrl.text);" ng-focus="$ctrl.onFocus()">
+        </md-input-container>
+    </div>
+    <div>
+        <md-button class="md-icon-button" style="margin-top: -20px;" ng-show="$ctrl.text != ''" ng-click="$ctrl.onClearText()">
+            <md-icon md-svg-src="content:ic_clear_24px" class="name"></md-icon>
+        </md-button>
+    </div>
+</div>

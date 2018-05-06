@@ -1,0 +1,11 @@
+<md-content layout-fill layout-padding layout-align="start center" layout="column">
+    <div>
+        This web application was created by David Vazin.
+        <br /> Traffic Path shows the path from one source to a destination visually to the clients.
+    </div>
+    <div layout="row" layout-align="center start" flex layout-wrap>
+        <div ng-repeat="technology in $ctrl.technologiesLst" layout-align="center center" layout-padding="8">
+            <img ng-src="{{technology.iconUrl}}" width="{{technology.iconWidth}}" />
+        </div>
+    </div>
+</md-content>
